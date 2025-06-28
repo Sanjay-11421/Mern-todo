@@ -7,7 +7,7 @@ function App() {
 
   function fetchData() {
     axios
-      .get("http://localhost:5000/get")
+      .get("https://mern-todo-50hg.onrender.com/get")
       .then((res) => setTodos(res.data))
       .catch((err) => console.log(err));
   }
@@ -19,7 +19,7 @@ function App() {
   function addTask() {
     if (!task?.trim()) return;
     axios
-      .post("http://localhost:5000/create", { task: task })
+      .post("https://mern-todo-50hg.onrender.com/create", { task: task })
       .then((data) => {
         console.log(data);
         fetchData();
@@ -30,7 +30,7 @@ function App() {
 
   function deleteTask(id) {
     axios
-      .delete("http://localhost:5000/delete/" + id)
+      .delete("https://mern-todo-50hg.onrender.com/delete/" + id)
       .then((res) => {
         console.log(res);
         fetchData();
@@ -40,7 +40,7 @@ function App() {
 
   function updateTask(id) {
     axios
-      .put("http://localhost:5000/update/" + id)
+      .put("https://mern-todo-50hg.onrender.com/update/" + id)
       .then((res) => {
         console.log(res);
         fetchData();
